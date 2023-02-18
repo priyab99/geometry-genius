@@ -29,14 +29,40 @@ document.getElementById('traingle-button').addEventListener('click',function(){
     const baseInput=parseFloat(baseInputFieldString);
     console.log(baseInput);
 
+    if(isNaN(baseInput)){
+        alert('Has to be a number');
+        return;
+    }
+    else if(baseInput<0){
+        alert('Input should be poeistive number');
+        return;
+
+    }
+
     const heightInputField=document.getElementById('traingle-height-field');
     const heightInputFieldString=heightInputField.value;
     const heightInput=parseFloat(heightInputFieldString);
     console.log(heightInput);
 
+    if(isNaN(heightInput)){
+        alert('Has to be a number');
+        return;
+    }
+     if(heightInput<0){
+        alert('Input should be poeistive number');
+        return;
+
+    }
+
+    if(baseInputFieldString===' '||heightInputFieldString===' '){
+        alert('Input field can not be empty');
+        return;
+    }
+
+
     const areaOfTri=calculateAreaOfTriRomPen(baseInput,heightInput);
 
-    areaField.innerHTML=`${serial}. Triangle ${areaOfTri.toFixed(2)} `;
+    areaField.innerHTML +=`${serial}. Triangle ${areaOfTri.toFixed(2)} `;
 
 
 })
@@ -51,10 +77,34 @@ document.getElementById('rectangle-button').addEventListener('click',function(){
     const widthInput=parseFloat(widthInputFieldString);
     console.log(widthInput);
 
+    if(isNaN(widthInput)){
+        alert('Has to be a number');
+        return;
+    }
+    if(widthInput<0){
+        alert('input should be a positive number');
+        return;
+    }
+        
+
     const lengthInputField=document.getElementById('rectangle-length-field');
     const lengthInputFieldString=lengthInputField.value;
     const lengthInput=parseFloat(lengthInputFieldString);
     console.log(lengthInput);
+
+    if(isNaN(lengthInput)){
+        alert('Has to be a number');
+        return;
+    }
+    if(lengthInput<0){
+        alert(' input has to be positve number');
+        return;
+    }
+
+    if(widthInputFieldString===' '||lengthInputFieldString===' '){
+        alert('Input field can not be empty');
+        return;
+    }
 
     const areaOfRec=calculateAreaOfRecPara(widthInput,lengthInput);
 
