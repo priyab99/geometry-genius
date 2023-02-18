@@ -191,7 +191,7 @@ document.getElementById('ellipse-button').addEventListener('click',function(){
 
     const calculateAreaOfEllipse=3.1416*aInput*bInput;
 
-    areaField.innerHTML +=`${serial}. Pentagon ${calculateAreaOfEllipse.toFixed(2)} `;
+    areaField.innerHTML +=`${serial}. Ellispe ${calculateAreaOfEllipse.toFixed(2)} `;
 
 })
 
