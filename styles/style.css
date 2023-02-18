@@ -1,0 +1,11 @@
+/*header section*/
+
+.header-class{
+    display: flex;
+    justify-content: space-between;
+
+}
+.header-head-span{
+    font-size: 10px;
+
+}
