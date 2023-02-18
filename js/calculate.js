@@ -1,4 +1,5 @@
 
+let serial=0;
 //function for calculating the area of Triangle, Rhombus and Pentagon
 function calculateAreaOfTriRomPen(input1,input2){
 
@@ -13,18 +14,15 @@ function calculateAreaOfRecPara(input1, input2){
     return area;
 }
 
-//function to show calculated areas:
+// show calculated areas:
 
-//function showCalculatedAreas(area){
     const areaField=document.getElementById('area-field');
 
-    //areaField.innerText= area;
-
-//}
 
 //Input area of Triangle
 
 document.getElementById('traingle-button').addEventListener('click',function(){
+    serial=serial+1;
 
     const baseInputField=document.getElementById('traingle-base-field');
     const baseInputFieldString=baseInputField.value;
@@ -38,14 +36,15 @@ document.getElementById('traingle-button').addEventListener('click',function(){
 
     const areaOfTri=calculateAreaOfTriRomPen(baseInput,heightInput);
 
-    //showCalculatedAreas(areaOfTri);
-    areaField.innerHTML= areaOfTri.toFixed(2);
+    areaField.innerHTML=`${serial}. Triangle ${areaOfTri.toFixed(2)} `;
 
 
 })
 
 //Input area of Rectangle
 document.getElementById('rectangle-button').addEventListener('click',function(){
+
+    serial=serial+1;
 
     const widthInputField=document.getElementById('rectangle-width-field');
     const widthInputFieldString=widthInputField.value;
@@ -58,8 +57,8 @@ document.getElementById('rectangle-button').addEventListener('click',function(){
     console.log(lengthInput);
 
     const areaOfRec=calculateAreaOfRecPara(widthInput,lengthInput);
-   // showCalculatedAreas(areaOfRec);
-   areaField.innerHTML +=areaOfRec.toFixed(2);
+
+   areaField.innerHTML +=areaField.innerHTML=`${serial}. Rectangle ${areaOfRec.toFixed(2)} `;
 
 
 
@@ -68,6 +67,8 @@ document.getElementById('rectangle-button').addEventListener('click',function(){
 //Input area of Parallelogram
 
 document.getElementById('parallelogram-button').addEventListener('click',function(){
+
+    serial=serial+1;
     const baseInputField=document.getElementById('parallelogram-base-text');
     const baseInputString=baseInputField.value;
     const baseInput=parseFloat(baseInputString);
@@ -78,13 +79,14 @@ document.getElementById('parallelogram-button').addEventListener('click',functio
 
     const areaOfPara=calculateAreaOfRecPara(baseInput,heightInput);
 
-    showCalculatedAreas(areaOfPara);
+    areaField.innerHTML +=`${serial}. Parallelogram ${areaOfPara.toFixed(2)} `;
     
 })
 
 //Input area of Rhombus
 document.getElementById('rhombus-button').addEventListener('click',function(){
 
+    serial=serial+1;
     const d1InputField=document.getElementById('rhombus-d1-field');
     const d1InputFieldString=d1InputField.value;
     const d1Input=parseFloat(d1InputFieldString);
@@ -97,7 +99,7 @@ document.getElementById('rhombus-button').addEventListener('click',function(){
 
     const areaOfRom=calculateAreaOfTriRomPen(d1Input,d2Input);
 
-    showCalculatedAreas(areaOfRom);
+    areaField.innerHTML +=`${serial}. Rhombus ${areaOfRom.toFixed(2)} ${br} `;
 
 
 })
@@ -105,6 +107,7 @@ document.getElementById('rhombus-button').addEventListener('click',function(){
 //Input area of Pentagon
 document.getElementById('pentagon-button').addEventListener('click',function(){
 
+    serial=serial+1;
     const pInputField=document.getElementById('pentagon-p-field');
     const pInputFieldString=pInputField.value;
     const pInput=parseFloat(pInputFieldString);
@@ -117,14 +120,15 @@ document.getElementById('pentagon-button').addEventListener('click',function(){
 
     const areaOfPen=calculateAreaOfTriRomPen(pInput,bInput);
 
-    showCalculatedAreas(areaOfPen);
+    areaField.innerHTML +=`${serial}. Pentagon ${areaOfPen.toFixed(2)} `;
 
 
 })
 
 //Input area of ellipse
 document.getElementById('ellipse-button').addEventListener('click',function(){
-
+    
+    serial=serial+1;
     const aInputField=document.getElementById('ellipse-a-field');
     const aInputFieldString=aInputField.value;
     const aInput=parseFloat(aInputFieldString);
@@ -137,7 +141,7 @@ document.getElementById('ellipse-button').addEventListener('click',function(){
 
     const calculateAreaOfEllipse=3.1416*aInput*bInput;
 
-    showCalculatedAreas(calculateAreaOfEllipse);
+    areaField.innerHTML +=`${serial}. Pentagon ${calculateAreaOfEllipse.toFixed(2)} `;
 
 })
 
