@@ -13,6 +13,15 @@ function calculateAreaOfRecPara(input1, input2){
     return area;
 }
 
+//function to show calculated areas:
+
+//function showCalculatedAreas(area){
+    const areaField=document.getElementById('area-field');
+
+    //areaField.innerText= area;
+
+//}
+
 //Input area of Triangle
 
 document.getElementById('traingle-button').addEventListener('click',function(){
@@ -29,8 +38,8 @@ document.getElementById('traingle-button').addEventListener('click',function(){
 
     const areaOfTri=calculateAreaOfTriRomPen(baseInput,heightInput);
 
-    const areaField=document.getElementById('area-field');
-    areaField.innerText=areaOfTri;
+    //showCalculatedAreas(areaOfTri);
+    areaField.innerHTML= areaOfTri.toFixed(2);
 
 
 })
@@ -49,9 +58,9 @@ document.getElementById('rectangle-button').addEventListener('click',function(){
     console.log(lengthInput);
 
     const areaOfRec=calculateAreaOfRecPara(widthInput,lengthInput);
+   // showCalculatedAreas(areaOfRec);
+   areaField.innerHTML +=areaOfRec.toFixed(2);
 
-    const areaField=document.getElementById('area-field');
-    areaField.innerText=areaOfRec;
 
 
 })
@@ -69,8 +78,7 @@ document.getElementById('parallelogram-button').addEventListener('click',functio
 
     const areaOfPara=calculateAreaOfRecPara(baseInput,heightInput);
 
-    const areaField=document.getElementById('area-field');
-    areaField.innerText=areaOfPara;
+    showCalculatedAreas(areaOfPara);
     
 })
 
@@ -89,8 +97,7 @@ document.getElementById('rhombus-button').addEventListener('click',function(){
 
     const areaOfRom=calculateAreaOfTriRomPen(d1Input,d2Input);
 
-    const areaField=document.getElementById('area-field');
-    areaField.innerText=areaOfRom;
+    showCalculatedAreas(areaOfRom);
 
 
 })
@@ -110,8 +117,7 @@ document.getElementById('pentagon-button').addEventListener('click',function(){
 
     const areaOfPen=calculateAreaOfTriRomPen(pInput,bInput);
 
-    const areaField=document.getElementById('area-field');
-    areaField.innerText=areaOfPen;
+    showCalculatedAreas(areaOfPen);
 
 
 })
@@ -131,8 +137,7 @@ document.getElementById('ellipse-button').addEventListener('click',function(){
 
     const calculateAreaOfEllipse=3.1416*aInput*bInput;
 
-    const areaField=document.getElementById('area-field');
-    areaField.innerText=calculateAreaOfEllipse;
-
+    showCalculatedAreas(calculateAreaOfEllipse);
 
 })
+
