@@ -149,7 +149,7 @@ document.getElementById('rhombus-button').addEventListener('click',function(){
 
     const areaOfRom=calculateAreaOfTriRomPen(d1Input,d2Input);
 
-    areaField.innerHTML +=`${serial}. Rhombus ${areaOfRom.toFixed(2)} ${br} `;
+    areaField.innerHTML +=`${serial}. Rhombus ${areaOfRom.toFixed(2)} `;
 
 
 })
